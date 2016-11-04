@@ -19,7 +19,9 @@ RxAndroid 响应式开发
    1、代码简洁
    2、异步的处理数据
    3、很好的处理迸发
-   
+
+
+   当中使用了MVP的设计模式，毕竟是Demo 所以就不在过多的包装了，不喜勿喷~~~~~~~~~
 简单的效果没有那么美观了，O(∩_∩)O哈哈~
 
 ![](https://raw.githubusercontent.com/wanglyGithub/RxJava_Okhttp3/8561935ffc1a474658b1946abdcce92ae8e2dcbd/app/src/main/java/preview/test.gif)
