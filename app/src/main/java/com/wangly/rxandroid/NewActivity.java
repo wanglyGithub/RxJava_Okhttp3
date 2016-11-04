@@ -1,13 +1,16 @@
 package com.wangly.rxandroid;
 
 import android.app.ProgressDialog;
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
+import com.wangly.rxandroid.bean.UserInfo;
 import com.wangly.rxandroid.constant.Constant;
 import com.wangly.rxandroid.presenter.LoginUtils;
 import com.wangly.rxandroid.view.LoginView;
@@ -88,6 +91,30 @@ public class NewActivity extends AppCompatActivity implements LoginView {
             @Override
             public void onNext(String s) {
                 Log.i("NewActivity", "获取用户信息成功：" + s);
+                //-------------------Begain--------------------
+                /**
+                 * TODO:
+                 * 以下代码可以在返回数据的时候返回JavaBean。因为在这里只是个Demo
+                 * 演示所以也就不做过多的处理了！当然如果你要改的话，可以直接改！
+                 */
+                Gson gson = new Gson();
+                UserInfo info = gson.fromJson(s, UserInfo.class);
+                String nickname = info.getNickname();
+                String city = info.getCity();
+                String sex = info.getSex();
+                String height = info.getHeight();
+                String weight = info.getWeight();
+                Intent intent = new Intent(NewActivity.this, PersonCenterActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("nickname", nickname);
+                bundle.putString("city", city);
+                bundle.putString("sex", sex);
+                bundle.putString("height", height);
+                bundle.putString("weight", weight);
+                intent.putExtras(bundle);
+                startActivity(intent);
+
+                //-------------------End--------------------
             }
         });
     }
