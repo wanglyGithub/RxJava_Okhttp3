@@ -22,5 +22,5 @@ RxAndroid 响应式开发
    
 简单的效果没有那么美观了，O(∩_∩)O哈哈~
 
-![](https://github.com/wanglyGithub/RxJava_Okhttp3/commit/8561935ffc1a474658b1946abdcce92ae8e2dcbd)
+![](https://raw.githubusercontent.com/wanglyGithub/RxJava_Okhttp3/8561935ffc1a474658b1946abdcce92ae8e2dcbd/app/src/main/java/preview/test.gif)
 
